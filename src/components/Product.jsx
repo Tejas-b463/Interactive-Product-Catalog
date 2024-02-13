@@ -4,6 +4,7 @@ import ProductList from "./ProductList";
 import { Fetch_API } from "../utils/constant";
 import Buttons from "./Buttons";
 import Shimmer from "../page/Shimmer";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [data, setData] = useState([]);
@@ -36,14 +37,21 @@ const Product = () => {
     return <Shimmer />;
   } else {
     return (
-      <div>
+      <div className="App">
         <Buttons
           setFilteredData={setFilteredData}
           ratingFiltered={ratingFiltered}
           filterItems={filterItems}
           data={data}
         ></Buttons>
-        <ProductList data={filteredData} />
+
+        {filteredData.map((item) => (
+          <div key={item.id} className="product-container">
+            <Link to={"/products/" + item.id}>
+              <ProductList item={item} />
+            </Link>
+          </div>
+        ))}
       </div>
     );
   }
