@@ -1,16 +1,13 @@
 import "./App.css";
-import Home from "./components/Home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProductMenu from "./components/ProductMenu";
+import Body from "./Body";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products/:proId" element={<ProductMenu />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={appStore}>
+      <Body />
+    </Provider>
   );
 }
 

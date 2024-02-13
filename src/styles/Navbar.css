@@ -1,0 +1,25 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul li {
+  margin: 0 10px;
+}
+
+ul li button {
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  cursor: pointer;
+}
