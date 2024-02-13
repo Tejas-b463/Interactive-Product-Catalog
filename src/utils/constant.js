@@ -1,0 +1,1 @@
+export const Fetch_API = "https://fakestoreapi.com/products/"
