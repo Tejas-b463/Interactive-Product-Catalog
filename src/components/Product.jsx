@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../styles/Product.css";
 import ProductList from "./ProductList";
 import { Fetch_API } from "../utils/constant";
+import Buttons from "./Buttons";
+import Shimmer from "../page/Shimmer";
 
 const Product = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
+  const [loading, setLoading] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch(Fetch_API);
@@ -13,6 +16,7 @@ const Product = () => {
     console.log(json);
     setData(json);
     setFilteredData(json);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -28,18 +32,21 @@ const Product = () => {
     const filteredProducts = data.filter((item) => item.rating.rate > 4);
     setFilteredData(filteredProducts);
   };
-
-  return (
-    <div>
-      <button onClick={() => setFilteredData(data)}>All</button>
-      <button onClick={ratingFiltered}>Rating 4.0+</button>
-      <button onClick={() => filterItems("men's clothing")}>Mens</button>
-      <button onClick={() => filterItems("women's clothing")}>Womens</button>
-      <button onClick={() => filterItems("jewelery")}>Jewelry</button>
-      <button onClick={() => filterItems("electronics")}>Electronics</button>
-      <ProductList data={filteredData} />
-    </div>
-  );
+  if (loading) {
+    return <Shimmer />;
+  } else {
+    return (
+      <div>
+        <Buttons
+          setFilteredData={setFilteredData}
+          ratingFiltered={ratingFiltered}
+          filterItems={filterItems}
+          data={data}
+        ></Buttons>
+        <ProductList data={filteredData} />
+      </div>
+    );
+  }
 };
 
 export default Product;
