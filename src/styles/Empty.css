@@ -1,0 +1,29 @@
+.order-success {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 80px;
+}
+
+.success-image {
+    width: 400px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+@media (max-width: 400px) {
+    .order-success {
+        margin-top: 120px;
+        min-width: 420px;
+    }
+    .success-image {
+        width: 200px;
+    }
+}

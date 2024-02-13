@@ -1,12 +1,15 @@
 import "./App.css";
 import Body from "./Body";
 import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+import appStore, { persistor } from "./utils/appStore";
+import { PersistGate } from "redux-persist/integration/react";
 
 function App() {
   return (
     <Provider store={appStore}>
-      <Body />
+      <PersistGate loading={null} persistor={persistor}>
+        <Body />
+      </PersistGate>
     </Provider>
   );
 }

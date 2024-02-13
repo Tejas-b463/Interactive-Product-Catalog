@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeFromCart } from "../utils/productSlice";
-// import EmptyCart from "./pages/EmptyCart";
+import EmptyCart from "../page/Empty";
 import { Link } from "react-router-dom";
-// import { CgClose } from "react-icons/cg";
-// import "./CardPage.css";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.products.items);
@@ -40,8 +38,7 @@ const CartPage = () => {
         <p>Total Items - {cartItems.length}</p>
       </div>
       {cartItems.length === 0 ? (
-        // <EmptyCart />
-        <h1>Loading.....</h1>
+        <EmptyCart />
       ) : (
         <div className="check-out">
           <div className="place-order">
