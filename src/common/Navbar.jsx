@@ -2,9 +2,24 @@ import React from "react";
 import "../styles/Navbar.css";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const productItem = useSelector((store) => store.products.items);
+  const navigate = useNavigate();
+  const user = useSelector((store) => store.user);
+
+  const handleSignOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        navigate("/signin");
+      })
+      .catch((error) => {
+        navigate("/error");
+      });
+  };
   return (
     <nav>
       <div>
@@ -16,7 +31,11 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/signin">Sign In</Link>
+            <button onClick={handleSignOut}>
+              {user ? "Sign Out" : "Sign In"}
+            </button>
+            <img src={user?.photoURL} alt="" />
+            <p>{user?.displayName}</p>
           </li>
           <li>
             <Link to="/cart">Cart {productItem.length}</Link>

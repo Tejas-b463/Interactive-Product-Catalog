@@ -5,8 +5,26 @@ import ProductMenu from "./components/ProductMenu";
 import Navbar from "./common/Navbar";
 import Cart from "./components/Cart";
 import SignIn from "./components/SignIn";
+import { useEffect } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./utils/firebase";
+import { addUser, removeUser } from "./utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Body = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(addUser({ uid, email, displayName, photoURL }));
+      } else {
+        dispatch(removeUser());
+      }
+    });
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar />

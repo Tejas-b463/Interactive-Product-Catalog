@@ -4,17 +4,21 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignIn(!isSignIn);
   };
 
+  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
 
@@ -34,7 +38,17 @@ const SignIn = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL:
+              "https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg",
+          })
+            .then(() => {
+              navigate("/");
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -50,6 +64,7 @@ const SignIn = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           console.log(user);
+          navigate("/");
         })
         .catch((error) => {
           const errorMessage = error.message;
@@ -63,7 +78,9 @@ const SignIn = () => {
       <div className="form-group">
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>{isSignIn ? "Sign In" : "Sign Up"}</h1>
-          {!isSignIn && <input type="text" placeholder="Name" required />}
+          {!isSignIn && (
+            <input ref={name} type="text" placeholder="Name" required />
+          )}
           <input ref={email} type="text" placeholder="Email" />
 
           <input ref={password} type="password" placeholder="Password" />

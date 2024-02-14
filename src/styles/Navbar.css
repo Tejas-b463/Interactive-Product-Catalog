@@ -23,3 +23,7 @@ ul li button {
   font-size: 20px;
   cursor: pointer;
 }
+
+img {
+  width: 100px;
+}
