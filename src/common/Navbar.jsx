@@ -8,12 +8,15 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <h1>Product Catalog</h1>
+        <Link to="/">Product Catalog</Link>
       </div>
       <div>
         <ul>
           <li>
-            <button to="/">Home</button>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/signin">Sign In</Link>
           </li>
           <li>
             <Link to="/cart">Cart {productItem.length}</Link>
