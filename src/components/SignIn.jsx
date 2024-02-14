@@ -1,6 +1,11 @@
 import React, { useState, useRef } from "react";
 import "../styles/SignIn.css";
 import { checkValidData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -16,6 +21,41 @@ const SignIn = () => {
   const handleButtonClick = () => {
     const message = checkValidData(email.current.value, password.current.value);
     setErrorMessage(message);
+
+    if (message) return;
+
+    if (!isSignIn) {
+      // sign Up
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          console.log(errorMessage);
+        });
+    } else {
+      // sign In
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          setErrorMessage(errorMessage);
+        });
+    }
   };
 
   return (
