@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, removeFromCart } from "../utils/productSlice";
+import { clearCart, removeFromCart } from "../redux/productSlice";
 import EmptyCart from "../page/Empty";
 import { Link } from "react-router-dom";
 

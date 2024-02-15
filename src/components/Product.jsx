@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Product.css";
 import ProductList from "./ProductList";
 import { Fetch_API } from "../utils/constant";
 import Buttons from "./Buttons";
 import Shimmer from "../page/Shimmer";
 import { Link } from "react-router-dom";
+import "../styles/Product.css";
 
 const Product = () => {
   const [data, setData] = useState([]);
@@ -37,21 +37,22 @@ const Product = () => {
     return <Shimmer />;
   } else {
     return (
-      <div className="App">
+      <div>
         <Buttons
           setFilteredData={setFilteredData}
           ratingFiltered={ratingFiltered}
           filterItems={filterItems}
           data={data}
         ></Buttons>
-
-        {filteredData.map((item) => (
-          <div key={item.id} className="product-container">
-            <Link to={"/products/" + item.id}>
-              <ProductList item={item} />
-            </Link>
-          </div>
-        ))}
+        <div className="product-container">
+          {filteredData.map((item) => (
+            <div key={item.id} className="product normal">
+              <Link to={"/products/" + item.id}>
+                <ProductList item={item} />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }

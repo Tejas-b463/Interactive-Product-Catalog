@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "./components/Home";
+import Home from "./page/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProductMenu from "./components/ProductMenu";
 import Navbar from "./common/Navbar";
@@ -8,8 +8,9 @@ import SignIn from "./components/SignIn";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
-import { addUser, removeUser } from "./utils/userSlice";
+import { addUser, removeUser } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
+import Breadcrumbs from "./page/Breadcrumbs";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -30,11 +31,12 @@ const Body = () => {
         dispatch(removeUser());
       }
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Navbar />
+      <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products/:proId" element={<ProductMenu />} />

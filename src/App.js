@@ -1,7 +1,7 @@
 import "./App.css";
 import Body from "./Body";
 import { Provider } from "react-redux";
-import appStore, { persistor } from "./utils/appStore";
+import appStore, { persistor } from "./redux/appStore";
 import { PersistGate } from "redux-persist/integration/react";
 
 function App() {

@@ -1,6 +1,8 @@
+import "../styles/Product.css";
+
 const ProductList = ({ item }) => {
   return (
-    <div key={item.id} className="product normal">
+    <div key={item.id} className="">
       <div className="product-header">
         <img src={item.image} alt="product" />
       </div>
@@ -11,6 +13,7 @@ const ProductList = ({ item }) => {
           <p className="item-price">{item.category}</p>
         </div>
       </div>
+      <span>{item.rating.rate}</span>
     </div>
   );
 };
