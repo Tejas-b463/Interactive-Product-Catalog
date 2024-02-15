@@ -11,6 +11,7 @@ import { auth } from "./utils/firebase";
 import { addUser, removeUser } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
 import Breadcrumbs from "./page/Breadcrumbs";
+import Stepper from "./page/Stepper ";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -42,6 +43,7 @@ const Body = () => {
         <Route path="/products/:proId" element={<ProductMenu />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/stepper" element={<Stepper />} />
       </Routes>
     </BrowserRouter>
   );

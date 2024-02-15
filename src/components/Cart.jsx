@@ -94,6 +94,7 @@ const CartPage = () => {
           </div>
         ))}
       </div>
+      <Link to="/stepper">Place Order</Link>
     </div>
   );
 };
