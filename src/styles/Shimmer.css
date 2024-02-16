@@ -8,9 +8,7 @@
 
 .shimmer-card {
   flex: 0 1 calc(30% - 20px);
-  /* Adjust the width and margin as needed */
   max-width: calc(30% - 20px);
-  /* Adjust the max-width as needed */
   margin: 20px;
   padding: 20px;
   border: 1px solid #ddd;
@@ -18,9 +16,7 @@
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  /* Include padding and border in the width calculation */
   @media (max-width: 768px) {
-    /* Adjust styles for smaller screens */
     flex: 0 1 calc(100% - 20px);
     max-width: calc(100% - 20px);
   }

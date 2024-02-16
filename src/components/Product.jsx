@@ -5,6 +5,7 @@ import Buttons from "./Buttons";
 import Shimmer from "../page/Shimmer";
 import { Link } from "react-router-dom";
 import "../styles/Product.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Product = () => {
   const [data, setData] = useState([]);
@@ -44,15 +45,17 @@ const Product = () => {
           filterItems={filterItems}
           data={data}
         ></Buttons>
-        <div className="product-container">
-          {filteredData.map((item) => (
-            <div key={item.id} className="product normal">
-              <Link to={"/products/" + item.id}>
-                <ProductList item={item} />
-              </Link>
-            </div>
-          ))}
-        </div>
+        <motion.div layout className="product-container">
+          <AnimatePresence>
+            {filteredData.map((item) => (
+              <div key={item.id} className="product normal">
+                <Link to={"/products/" + item.id}>
+                  <ProductList item={item} />
+                </Link>
+              </div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     );
   }

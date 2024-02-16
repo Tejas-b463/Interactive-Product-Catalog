@@ -8,16 +8,16 @@ const Breadcrumbs = () => {
 
   return (
     <div className="breadcurmbs">
-      {pathNames.length > 0 && <Link to="/">Home</Link>}
+      {pathNames.length > 0 && <Link to="/">Home </Link>}
       {pathNames.map((name, index) => {
         breadCrumbPath += `${name}`;
         const isLast = index === pathNames.length - 1;
 
         return isLast ? (
-          <span>/ {name}</span>
+          <span> / {name}</span>
         ) : (
           <span key={breadCrumbPath}>
-            / <Link to={breadCrumbPath}>{name}</Link>
+            / <Link>{name}</Link>
           </span>
         );
       })}
