@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .product {
@@ -40,7 +39,19 @@
 }
 
 .item-price {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.item-title {
+  color: #866528;
   font-size: 18px;
+}
+
+.item-rate {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
 }
 
 .product-details h4 {

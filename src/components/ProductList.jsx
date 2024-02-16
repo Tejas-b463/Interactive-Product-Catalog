@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import "../styles/Product.css";
+import { TiStar } from "react-icons/ti";
 
 const ProductList = ({ item }) => {
   const { ref, inView } = useInView({
@@ -23,13 +24,17 @@ const ProductList = ({ item }) => {
         <img src={item.image} alt="product" />
       </div>
       <div className="product-details">
-        <h4 className="item-price">{item.title}</h4>
-        <div className="product-item">
-          <p className="item-price">${item.price}</p>
-          <p className="item-price">{item.category}</p>
+        <h4 className="item-title">{item.title}</h4>
+        <div className="item-category">{item.category}</div>
+        <div className="item-rate">
+          <div className="pro-rating">
+            {item.rating.rate}
+            <TiStar style={{ marginLeft: "2px" }} />
+          </div>
+          <div>{item.rating.count} Ratings</div>
         </div>
+        <div className="item-price">${item.price}</div>
       </div>
-      <span>{item.rating.rate}</span>
     </motion.div>
   );
 };

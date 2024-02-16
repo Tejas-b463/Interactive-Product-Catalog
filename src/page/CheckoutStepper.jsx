@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
-const CheckoutStepper = ({ stepsConfig = [] }) => {
+const CheckoutStepper = ({ stepsConfig = [], handleClearCart }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [isComplete, setIsComplete] = useState(false);
   const [margins, setMargins] = useState({
@@ -79,8 +80,18 @@ const CheckoutStepper = ({ stepsConfig = [] }) => {
       <ActiveComponent />
 
       {!isComplete && (
-        <button className="btn" onClick={handleNext}>
-          {currentStep === stepsConfig.length ? "Finish" : "Next"}
+        <button
+          style={{ display: "block", margin: "auto" }}
+          className="stepper-btn"
+          onClick={handleNext}
+        >
+          {currentStep === stepsConfig.length ? (
+            <Link style={{ color: "#fff" }} to="/">
+              Continue Order
+            </Link>
+          ) : (
+            "Next"
+          )}
         </button>
       )}
     </>

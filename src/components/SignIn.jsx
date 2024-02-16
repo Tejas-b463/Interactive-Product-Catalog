@@ -87,7 +87,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="form-group">
+      <div className="form-group" style={{ marginTop: "180px" }}>
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>{isSignIn ? "Sign In" : "Sign Up"}</h1>
           <div className="form-container">

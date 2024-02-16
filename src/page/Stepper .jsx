@@ -1,28 +1,33 @@
 import React from "react";
 import CheckoutStepper from "./CheckoutStepper";
 import "../styles/Stepper.css";
+import CustomInfo from "../Form/CustomInfo";
+import ShippingInfo from "../Form/ShippingInfo";
+import PaymentInfo from "../Form/PaymentInfo";
+import Delivered from "../Form/Delivered";
+
 const CHECKOUT_STEPS = [
   {
     name: "Custom Info",
-    Component: () => <div>Provide your contact details</div>,
+    Component: () => <CustomInfo />,
   },
   {
     name: "Shipping Information",
-    Component: () => <div>Enter Your Shipping Address</div>,
+    Component: () => <ShippingInfo />,
   },
   {
     name: "Payment",
-    Component: () => <div>Complete payment for your order</div>,
+    Component: () => <PaymentInfo />,
   },
   {
     name: "Delivered",
-    Component: () => <div>Your order has been delivered</div>,
+    Component: () => <Delivered />,
   },
 ];
 
 const Stepper = () => {
   return (
-    <div>
+    <div style={{ marginTop: "150px" }}>
       <CheckoutStepper stepsConfig={CHECKOUT_STEPS} />
     </div>
   );

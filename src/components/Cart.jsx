@@ -34,7 +34,7 @@ const CartPage = () => {
 
   return (
     <>
-      <div className="cart-summary">
+      <div className="cart-summary" style={{ marginTop: "150px" }}>
         <div>
           <span className="bold">My Bag</span>(
           <span>{cartItems.length} items</span>)

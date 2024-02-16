@@ -39,12 +39,12 @@ const Product = () => {
   } else {
     return (
       <div>
-        <Buttons
+        {/* <Buttons
           setFilteredData={setFilteredData}
           ratingFiltered={ratingFiltered}
           filterItems={filterItems}
           data={data}
-        ></Buttons>
+        ></Buttons> */}
         <motion.div layout className="product-container">
           <AnimatePresence>
             {filteredData.map((item) => (

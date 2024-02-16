@@ -1,8 +1,8 @@
 import React from "react";
-import Home from "./page/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ProductMenu from "./components/ProductMenu";
 import Navbar from "./common/Navbar";
+import Home from "./page/Home";
+import ProductMenu from "./components/ProductMenu";
 import Cart from "./components/Cart";
 import SignIn from "./components/SignIn";
 import { useEffect } from "react";
@@ -12,12 +12,13 @@ import { addUser, removeUser } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
 import Breadcrumbs from "./page/Breadcrumbs";
 import Stepper from "./page/Stepper ";
+import Footer from "./common/Footer";
 
 const Body = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -32,11 +33,13 @@ const Body = () => {
         dispatch(removeUser());
       }
     });
+    return () => unsubscribe();
   }, [dispatch]);
 
   return (
     <BrowserRouter>
       <Navbar />
+
       <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -45,8 +48,8 @@ const Body = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/stepper" element={<Stepper />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
-
 export default Body;
