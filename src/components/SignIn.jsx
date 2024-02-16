@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, lazy } from "react";
 import "../styles/SignIn.css";
 import { checkValidData } from "../utils/validate";
 import {
@@ -90,21 +90,28 @@ const SignIn = () => {
       <div className="form-group">
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>{isSignIn ? "Sign In" : "Sign Up"}</h1>
-          {!isSignIn && (
-            <input ref={name} type="text" placeholder="Name" required />
-          )}
-          <input ref={email} type="text" placeholder="Email" />
-
-          <input ref={password} type="password" placeholder="Password" />
-          <p style={{ color: "red" }}>{errorMessage}</p>
-          <button onClick={handleButtonClick}>
-            {isSignIn ? "Sign In" : "Sign Up"}
-          </button>
-          <p onClick={toggleSignInForm}>
-            {isSignIn
-              ? "New User? Create Account"
-              : " Already a Customer? Login"}
-          </p>
+          <div className="form-container">
+            {!isSignIn && (
+              <div className="login-form">
+                <input ref={name} type="text" placeholder="Name" required />
+              </div>
+            )}
+            <div className="login-form">
+              <input ref={email} type="text" placeholder="Email" />
+            </div>
+            <div className="login-form">
+              <input ref={password} type="password" placeholder="Password" />
+            </div>
+            <p style={{ color: "red" }}>{errorMessage}</p>
+            <button className="form-btn" onClick={handleButtonClick}>
+              {isSignIn ? "Sign In" : "Sign Up"}
+            </button>
+            <div className="login-text" onClick={toggleSignInForm}>
+              {isSignIn
+                ? "New User? Create Account"
+                : "Already a Customer? Login"}
+            </div>
+          </div>
         </form>
       </div>
     </>
