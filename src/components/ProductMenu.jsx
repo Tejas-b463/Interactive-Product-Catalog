@@ -19,7 +19,7 @@ const ProductMenu = () => {
   }, [proId]);
 
   return (
-    <div style={{ marginTop: "120px" }}>
+    <div style={{ marginTop: "30px" }}>
       {product ? <ProductDetails product={product} /> : <Shimmer />}
     </div>
   );

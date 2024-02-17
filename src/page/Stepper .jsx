@@ -27,7 +27,7 @@ const CHECKOUT_STEPS = [
 
 const Stepper = () => {
   return (
-    <div style={{ marginTop: "150px" }}>
+    <div style={{ marginTop: "30px" }}>
       <CheckoutStepper stepsConfig={CHECKOUT_STEPS} />
     </div>
   );

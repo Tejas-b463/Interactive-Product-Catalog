@@ -44,7 +44,7 @@ const SignIn = () => {
           updateProfile(user, {
             displayName: name.current.value,
             photoURL:
-              "https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg",
+              "https://cdn.vectorstock.com/i/1000x1000/39/28/indian-boy-face-avatar-cartoon-in-black-and-white-vector-25973928.webp",
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -87,7 +87,7 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="form-group" style={{ marginTop: "180px" }}>
+      <div className="form-group" style={{ marginTop: "60px" }}>
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>{isSignIn ? "Sign In" : "Sign Up"}</h1>
           <div className="form-container">

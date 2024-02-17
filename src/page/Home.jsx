@@ -3,7 +3,7 @@ import Product from "../components/Product";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ marginTop: "40px" }}>
       <Product />
     </div>
   );

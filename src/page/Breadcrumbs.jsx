@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-
+import "../styles/Form.css";
 const Breadcrumbs = () => {
   const { pathname } = useLocation();
   const pathNames = pathname.split("/").filter((x) => x);

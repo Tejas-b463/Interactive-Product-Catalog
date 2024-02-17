@@ -39,7 +39,6 @@ const Body = () => {
   return (
     <BrowserRouter>
       <Navbar />
-
       <Breadcrumbs />
       <Routes>
         <Route path="/" element={<Home />} />
