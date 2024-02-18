@@ -1,22 +1,22 @@
 .order-success {
-  margin-right: 300px;
-  text-align: center;
+    margin-right: 300px;
+    text-align: center;
 }
 
 .order-details {
-  padding: 20px;
+    padding: 20px;
 }
 
 .order-details p {
-  margin: 10px;
+    margin: 10px;
 }
 
 @media (max-width: 400px) {
-  .order-success {
-    margin-top: 120px;
-    min-width: 420px;
-  }
-  .success-image {
-    width: 200px;
-  }
+    .order-success {
+        margin-top: 120px;
+        min-width: 420px;
+    }
+    .success-image {
+        width: 200px;
+    }
 }

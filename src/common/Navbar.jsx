@@ -29,7 +29,7 @@ const Navbar = () => {
       </Link>
       <div className={`nav-items ${isOpen && "open"}`}>
         <Link>Home</Link>
-        <Link to="/">Product</Link>
+        <Link to="/products">Product</Link>
         <Link onClick={handleSignOut}>{user ? "Sign Out" : "Sign In"}</Link>
         <Link>
           {user?.displayName.toUpperCase()}

@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./common/Navbar";
-import Home from "./page/Home";
+import Home from "./Home/Home";
 import ProductMenu from "./components/ProductMenu";
 import Cart from "./components/Cart";
 import SignIn from "./components/SignIn";
+import Product from "./components/Product";
 import { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./utils/firebase";
 import { addUser, removeUser } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
-import Breadcrumbs from "./page/Breadcrumbs";
 import Stepper from "./page/Stepper ";
 import Footer from "./common/Footer";
 
@@ -39,9 +39,10 @@ const Body = () => {
   return (
     <BrowserRouter>
       <Navbar />
-      <Breadcrumbs />
+      {/* <Breadcrumbs /> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Product />} />
         <Route path="/products/:proId" element={<ProductMenu />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SignIn />} />
