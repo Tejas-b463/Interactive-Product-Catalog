@@ -106,6 +106,7 @@ const SignIn = () => {
             <button className="form-btn" onClick={handleButtonClick}>
               {isSignIn ? "Sign In" : "Sign Up"}
             </button>
+
             <div className="login-text" onClick={toggleSignInForm}>
               {isSignIn
                 ? "New User? Create Account"
