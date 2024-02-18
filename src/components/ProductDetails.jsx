@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/productSlice";
+import { addToWishlist } from "../redux/wishlistSlice";
 import { motion } from "framer-motion";
 import "../styles/ProductDetails.css";
 import { TiStar } from "react-icons/ti";
@@ -11,6 +12,11 @@ const ProductDetails = ({ product }) => {
   const notify = () => toast("Add to Bag Sucessfully ✅");
   const handleAddItem = () => {
     dispatch(addToCart(product));
+    notify();
+  };
+
+  const handleAddWishlistItem = () => {
+    dispatch(addToWishlist(product));
     notify();
   };
 
@@ -41,7 +47,9 @@ const ProductDetails = ({ product }) => {
                 Add to Bag
               </button>
               <Toaster />
-              <button className="wishlist">Save to Wishlist</button>
+              <button className="wishlist" onClick={handleAddWishlistItem}>
+                Save to Wishlist
+              </button>
             </div>
           </div>
         </div>

@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { GiSelfLove } from "react-icons/gi";
 
 const Navbar = () => {
   const productItem = useSelector((store) => store.products.items);
+  const wishlistItem = useSelector((store) => store.wishlists.items);
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
@@ -47,6 +49,12 @@ const Navbar = () => {
         <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
           <AiOutlineShoppingCart />
           <span className="cart-item"> {productItem.length}</span>
+        </Link>
+        <Link to="/wishlist" onClick={() => window.scrollTo(0, 0)}>
+          <GiSelfLove />
+          <span className="cart-item" id="cart-change">
+            {wishlistItem.length}
+          </span>
         </Link>
       </div>
       <div

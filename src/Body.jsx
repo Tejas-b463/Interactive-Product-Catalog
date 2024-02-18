@@ -13,6 +13,7 @@ import { addUser, removeUser } from "./redux/userSlice";
 import { useDispatch } from "react-redux";
 import Stepper from "./page/Stepper ";
 import Footer from "./common/Footer";
+import WishList from "./components/WishList";
 
 const Body = () => {
   const dispatch = useDispatch();
@@ -47,6 +48,7 @@ const Body = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/stepper" element={<Stepper />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>
       <Footer />
     </BrowserRouter>

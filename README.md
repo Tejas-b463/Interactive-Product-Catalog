@@ -4,7 +4,7 @@
 
   <h2 align="center">Shoppi - eCommerce website</h2>
 
-Shoppi is fully Dynamic ecommerce website, <br />Responsive for all devices, built using React Js, CSS, Redux Toolkit, Firebase.
+Shoppi is fully Dynamic ecommerce website, <br />Responsive for all devices, built using React Js, CSS, Redux Toolkit, Framer Motion.
 
 <a href=""><strong>➥ Live Demo</strong></a>
 

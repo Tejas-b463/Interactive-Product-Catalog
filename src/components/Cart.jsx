@@ -4,6 +4,7 @@ import { clearCart, removeFromCart } from "../redux/productSlice";
 import EmptyCart from "../page/Empty";
 import { Link } from "react-router-dom";
 import "../styles/Cart.css";
+import { MdDelete } from "react-icons/md";
 
 const CartPage = () => {
   const cartItems = useSelector((store) => store.products.items);
@@ -77,12 +78,12 @@ const CartPage = () => {
                 >
                   +
                 </button>
-                <button
+                <MdDelete
                   id="remove-btn"
                   onClick={() => dispatch(removeFromCart(product.id))}
                 >
                   Remove
-                </button>
+                </MdDelete>
               </div>
             </div>
           ))}

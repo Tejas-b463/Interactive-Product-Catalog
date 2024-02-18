@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
+import { motion } from "framer-motion";
 
 const SignIn = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -87,7 +88,14 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="form-group" style={{ marginTop: "60px" }}>
+      <motion.div
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -150 }}
+        transition={{ duration: 1 }}
+        className="form-group"
+        style={{ marginTop: "60px" }}
+      >
         <form onSubmit={(e) => e.preventDefault()}>
           <h1>{isSignIn ? "Sign In" : "Sign Up"}</h1>
           <div className="form-container">
@@ -114,7 +122,7 @@ const SignIn = () => {
             </div>
           </div>
         </form>
-      </div>
+      </motion.div>
     </>
   );
 };
