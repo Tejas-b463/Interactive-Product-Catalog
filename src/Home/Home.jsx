@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../components/Product";
+import ProductHome from "../components/ProductHome";
 import Hero from "./Hero";
 import Service from "./Service";
 import Category from "./Category";
@@ -12,7 +12,7 @@ const Home = () => {
       <Hero />
       <Service />
       <Category />
-      <Product />
+      <ProductHome />
       <Blog />
       <Newsletter />
     </div>

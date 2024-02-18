@@ -37,6 +37,9 @@ const Product = () => {
   if (loading) {
     return <Shimmer />;
   } else {
+    const filteredItems = filteredData
+      .filter((item) => item.id >= 6)
+      .slice(0, 6);
     return (
       <div>
         <Buttons
@@ -45,20 +48,30 @@ const Product = () => {
           filterItems={filterItems}
           data={data}
         ></Buttons>
-        <motion.div layout className="product-container">
+        <motion.div
+          onClick={() => window.scrollTo(0, 0)}
+          layout
+          className="product-container"
+        >
           <AnimatePresence>
-            {filteredData.map((item) => (
+            {filteredItems.map((item) => (
               <div key={item.id} className="product normal">
-                <Link
-                  onClick={() => window.scrollTo(0, 0)}
-                  to={"/products/" + item.id}
-                >
+                <Link to={"/products/" + item.id}>
                   <ProductList item={item} />
                 </Link>
               </div>
             ))}
           </AnimatePresence>
         </motion.div>
+        <div className="product-btn">
+          <Link
+            onClick={() => window.scrollTo(0, 0)}
+            to="/products"
+            className="form-btn producthome-btn"
+          >
+            Load More
+          </Link>
+        </div>
       </div>
     );
   }

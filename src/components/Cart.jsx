@@ -35,9 +35,8 @@ const CartPage = () => {
   return (
     <>
       <div className="cart-summary" style={{ marginTop: "50px" }}>
-        <div>
-          <span className="bold">My Bag</span>(
-          <span>{cartItems.length} items</span>)
+        <div className="my-bag">
+          <p className="bold">My Bag</p>(<p>{cartItems.length} items</p>)
         </div>
         <div className="clear-cart">
           <button className="clear-btn" onClick={handleClearCart}>

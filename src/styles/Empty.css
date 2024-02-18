@@ -7,6 +7,12 @@
     padding: 20px;
 }
 
+.order-success img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .order-details p {
     margin: 10px;
 }

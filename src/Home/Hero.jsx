@@ -1,8 +1,12 @@
 import React from "react";
 import HeroBanner from "../img/hero-banner.jpg";
 import "../styles/Home.css";
-
+import { useNavigate } from "react-router-dom";
 const Hero = () => {
+  const navigate = useNavigate();
+  const handleButton = () => {
+    navigate("/products");
+  };
   return (
     <section
       className="hero"
@@ -15,7 +19,9 @@ const Hero = () => {
 
           <h2 className="h1 hero-title">Unrivalled Fashion House</h2>
 
-          <button className="btn btn-primary">Shop Now</button>
+          <button onClick={handleButton} className="btn btn-primary">
+            Shop Now
+          </button>
         </div>
       </div>
     </section>

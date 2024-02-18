@@ -7,6 +7,7 @@ const EmptyCart = () => {
   return (
     <div className="order-success">
       <img src={EmptyImg} alt="Order Success" />
+
       <div className="order-details">
         <h1>Your shopping cart is empty.</h1>
         <p>Please add something soon, carts have feelings too.</p>

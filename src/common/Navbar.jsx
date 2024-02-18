@@ -20,16 +20,21 @@ const Navbar = () => {
       .catch((error) => {
         navigate("/error");
       });
+    window.scrollTo(0, 0);
   };
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="Navbar">
-      <Link to="/" className="nav-logo">
+      <Link onClick={() => window.scrollTo(0, 0)} to="/" className="nav-logo">
         SHOPPI
       </Link>
       <div className={`nav-items ${isOpen && "open"}`}>
-        <Link>Home</Link>
-        <Link to="/products">Product</Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/">
+          Home
+        </Link>
+        <Link onClick={() => window.scrollTo(0, 0)} to="/products">
+          Product
+        </Link>
         <Link onClick={handleSignOut}>{user ? "Sign Out" : "Sign In"}</Link>
         <Link>
           {user?.displayName.toUpperCase()}
@@ -39,7 +44,7 @@ const Navbar = () => {
             alt=""
           /> */}
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
           <AiOutlineShoppingCart />
           <span className="cart-item"> {productItem.length}</span>
         </Link>
