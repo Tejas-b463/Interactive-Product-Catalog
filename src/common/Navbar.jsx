@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/Navbar.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -6,6 +6,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { GiSelfLove } from "react-icons/gi";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const Navbar = () => {
   const productItem = useSelector((store) => store.products.items);
@@ -25,8 +26,32 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   };
   const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
+  useEffect(() => {
+    const unsub = scrollY.on("change", (latest) => console.log(latest));
+    return () => unsub();
+  }, [scrollY]);
   return (
-    <div className="Navbar">
+    <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="Navbar"
+    >
       <Link onClick={() => window.scrollTo(0, 0)} to="/" className="nav-logo">
         SHOPPI
       </Link>
@@ -63,7 +88,7 @@ const Navbar = () => {
       >
         <div className="bar"></div>
       </div>
-    </div>
+    </motion.nav>
   );
 };
 

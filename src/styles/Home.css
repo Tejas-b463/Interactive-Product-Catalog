@@ -353,7 +353,7 @@
 .newsletter-card .input-wrapper ion-icon {
   font-size: 18px;
   position: absolute;
-  top: 50%;
+  top: 20%;
   left: 25px;
   transform: translateY(-50%);
 }

@@ -53,7 +53,7 @@ const CartPage = () => {
               <div className="product-details">
                 {/* <div className="product-title">{product.title}</div> */}
                 <div>{product.category}</div>
-                <div>Price: ${product.price.toFixed(2)}</div>
+                <div>${product.price.toFixed(2)}</div>
               </div>
 
               <div className="quantity-controls">

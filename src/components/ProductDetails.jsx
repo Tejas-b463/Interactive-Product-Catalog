@@ -42,7 +42,7 @@ const ProductDetails = ({ product }) => {
               <div>{product.rating.count} Ratings</div>
             </div>
             <div className="pro-price">${product.price}</div>
-            <div>
+            <div className="add-btn">
               <button className="addtobag" onClick={handleAddItem}>
                 Add to Bag
               </button>
@@ -55,7 +55,7 @@ const ProductDetails = ({ product }) => {
         </div>
         <div className="about">
           <h1 className="heading-with-line">About {product.category}</h1>
-          <div>{product.description}</div>
+          <div className="product-desc">{product.description}</div>
         </div>
       </motion.div>
     </>

@@ -36,6 +36,7 @@
   margin-top: 0;
   font-weight: 600;
   font-size: 20px;
+  text-align: center;
 }
 
 .pro-rate {
@@ -93,7 +94,7 @@
   margin-top: 10px;
   background-color: #fff;
   border: 1px solid #866528;
-  margin-left: 20px;
+  /* margin-left: 10px; */
 }
 
 .heading-with-line {
@@ -117,4 +118,27 @@
   width: 1200px;
   line-height: 2rem;
   margin-top: 20px;
+}
+
+.about {
+  display: none;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 460px) {
+  .pro-rate {
+    margin-right: 200px;
+  }
+  .pro-title {
+    max-width: 300px;
+    text-align: center;
+    margin-left: 130px;
+  }
 }

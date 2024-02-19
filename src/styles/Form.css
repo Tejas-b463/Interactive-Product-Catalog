@@ -1,76 +1,78 @@
 .stepper-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 form h1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .stepper-container {
-    padding: 40px 120px;
-    border: 0.5px solid #eae9e9;
+  padding: 40px 120px;
+  border: 0.5px solid #eae9e9;
 }
 
 input {
-    outline: none;
-    border: none;
-    border-bottom: 1.5px solid #e3e3e3;
-    margin: 40px 0 4px;
-    padding-bottom: 4px px;
-    box-shadow: none;
-    width: 100%;
-    font-weight: 500;
-    font-size: 17px;
+  outline: none;
+  border: none;
+  border-bottom: 1.5px solid #e3e3e3;
+  margin: 40px 0 4px;
+  padding-bottom: 4px px;
+  box-shadow: none;
+  width: 100%;
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .stepper-btn {
-    background-color: #866528;
-    padding: 0 100px;
-    display: inline-block;
-    text-transform: uppercase;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    height: 50px;
-    line-height: 50px;
-    border: none;
+  background-color: #866528;
+  padding: 0 100px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+  border: none;
 }
 
 .stepper-form {
-    display: flex;
+  display: flex;
 }
 
 .login-text {
-    margin-top: 20px;
-    font-weight: 600;
-    cursor: pointer;
+  margin-top: 20px;
+  font-weight: 600;
+  cursor: pointer;
 }
-
 
 /* delivered */
 
 .delivered-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 120px;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
+.delivered-container img {
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Breadcurmbs CSS */
 
 .breadcurmbs {
-    margin-top: 40px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 40px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

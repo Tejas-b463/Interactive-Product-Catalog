@@ -20,8 +20,6 @@ const Newsletter = () => {
 
           <form action="" className="card-form">
             <div className="input-wrapper">
-              <IonIcon name="mail-outline"></IonIcon>
-
               <input
                 type="email"
                 name="emal"
