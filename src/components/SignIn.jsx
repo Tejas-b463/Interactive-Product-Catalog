@@ -1,4 +1,4 @@
-import React, { useState, useRef, lazy } from "react";
+import React, { useState, useRef } from "react";
 import "../styles/SignIn.css";
 import { checkValidData } from "../utils/validate";
 import {
