@@ -63,14 +63,7 @@ const Navbar = () => {
           Product
         </Link>
         <Link onClick={handleSignOut}>{user ? "Sign Out" : "Sign In"}</Link>
-        <Link>
-          {user?.displayName.toUpperCase()}
-          {/* <img
-            style={{ width: "20px", marginLeft: "10px" }}
-            src={user?.photoURL}
-            alt=""
-          /> */}
-        </Link>
+        <Link>{user?.displayName}</Link>
         <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
           <AiOutlineShoppingCart />
           <span className="cart-item"> {productItem.length}</span>

@@ -4,9 +4,9 @@
 
   <h2 align="center">Shoppi - eCommerce website</h2>
 
-Shoppi is fully Dynamic ecommerce website, <br />Responsive for all devices, built using React Js, CSS, Redux Toolkit, Framer Motion.
+Shoppi is fully Dynamic ecommerce website, <br /> Built using React Js, CSS, Redux Toolkit, Framer Motion.
 
-<a href=""><strong>➥ Live Demo</strong></a>
+<a href="https://product-catalog-db189.web.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
@@ -14,7 +14,7 @@ Shoppi is fully Dynamic ecommerce website, <br />Responsive for all devices, bui
 
 ### Demo Screeshots
 
-![Shoppi Desktop Demo](./src/img/projectimg.png "Desktop Demo")
+![Shoppi Desktop Demo](./src/img/projectimg1.png "Desktop Demo")
 
 ### Prerequisites
 

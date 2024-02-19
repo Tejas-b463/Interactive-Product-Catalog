@@ -16,7 +16,7 @@ const ProductMenu = () => {
 
   useEffect(() => {
     fetchProductDetails();
-  }, []);
+  });
 
   return (
     <div style={{ marginTop: "30px" }}>
