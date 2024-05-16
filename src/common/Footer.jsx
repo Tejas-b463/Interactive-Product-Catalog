@@ -16,7 +16,7 @@ const Footer = () => {
             </Link>
 
             <p className="footer-text">
-              Casmart is Link fashion theme for presents Link complete wardrobe
+              Shoppi is Link fashion theme for presents Link complete wardrobe
               of uniquely crafted Ethnic Wear, Casuals, Edgy Denims, &
               Accessories inspired from the most contemporary
             </p>
